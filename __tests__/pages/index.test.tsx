@@ -108,15 +108,17 @@ describe('main page BWA', () => {
   test('press left arrow key - forecast card', () => {
     const { getByTestId } = render(<BestWeatherApp {...mockData} />);
     const weatherCard = getByTestId('weather-card');
-    fireEvent.keyDown(weatherCard, { key: 'ArrowLeft', keyCode: 37 });
-    fireEvent.keyUp(weatherCard, { key: 'ArrowLeft', keyCode: 37 });
+    const main = getByTestId('main');
+    fireEvent.keyDown(main, { key: 'ArrowLeft', keyCode: 37 });
+    fireEvent.keyUp(main, { key: 'ArrowLeft', keyCode: 37 });
     expect(weatherCard).toHaveTextContent('WEATHER TODAY');
   });
   test('press right arrow key - today card', () => {
     const { getByTestId } = render(<BestWeatherApp {...mockData} />);
     const weatherCard = getByTestId('weather-card');
-    fireEvent.keyDown(weatherCard, { key: 'ArrowRight', keyCode: 39 });
-    fireEvent.keyUp(weatherCard, { key: 'ArrowRight', keyCode: 39 });
-    expect(weatherCard).toHaveTextContent('WEATHER TODAY');
+    const main = getByTestId('main');
+    fireEvent.keyDown(main, { key: 'ArrowLeft', keyCode: 39 });
+    fireEvent.keyUp(main, { key: 'ArrowLeft', keyCode: 39 });
+    expect(weatherCard).toHaveTextContent('WEATHER FORECAST');
   });
 });
