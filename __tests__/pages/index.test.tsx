@@ -117,8 +117,8 @@ describe('main page BWA', () => {
     const { getByTestId } = render(<BestWeatherApp {...mockData} />);
     const weatherCard = getByTestId('weather-card');
     const main = getByTestId('main');
-    fireEvent.keyDown(main, { key: 'ArrowLeft', keyCode: 39 });
-    fireEvent.keyUp(main, { key: 'ArrowLeft', keyCode: 39 });
+    fireEvent.keyDown(main, { key: 'ArrowRight', keyCode: 39 });
+    fireEvent.keyUp(main, { key: 'ArrowRight', keyCode: 39 });
     expect(weatherCard).toHaveTextContent('WEATHER FORECAST');
   });
 });
