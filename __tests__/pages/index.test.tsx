@@ -117,6 +117,6 @@ describe('main page BWA', () => {
     const weatherCard = getByTestId('weather-card');
     fireEvent.keyDown(weatherCard, { key: 'ArrowRight', keyCode: 39 });
     fireEvent.keyUp(weatherCard, { key: 'ArrowRight', keyCode: 39 });
-    expect(weatherCard).toHaveTextContent('WEATHER FORECAST');
+    expect(weatherCard).toHaveTextContent('WEATHER TODAY');
   });
 });

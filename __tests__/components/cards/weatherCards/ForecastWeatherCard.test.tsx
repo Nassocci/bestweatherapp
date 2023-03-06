@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { DataForecast } from '@/typings';
-import ForeCastWeatherCard from '../../components/cards/weatherCards/ForeCastWeatherCard';
+import ForeCastWeatherCard from '../../../../components/cards/weatherCards/ForeCastWeatherCard';
 
 describe('ForeCastWeatherCard BWA', () => {
   const mockDataForecast:DataForecast = {
@@ -306,8 +306,8 @@ describe('ForeCastWeatherCard BWA', () => {
   };
   test('renders forecast weather card correctly', () => {
     const { getByTestId } = render(<ForeCastWeatherCard {...mockDataForecast} />);
-    const windspeed = getByTestId('h1-WF');
-    expect(windspeed).toHaveTextContent('WEATHER TODAY');
+    const h1test = getByTestId('h1-WF');
+    expect(h1test).toHaveTextContent('WEATHER TODAY');
   });
   test('render  first card', () => {
     const { getByTestId } = render(<ForeCastWeatherCard {...mockDataForecast} />);

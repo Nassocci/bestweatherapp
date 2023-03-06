@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { DataToday } from '@/typings';
-import TodayWeatherCard from '../../components/cards/weatherCards/TodayWeatherCard';
+import TodayWeatherCard from '../../../../components/cards/weatherCards/TodayWeatherCard';
 
 describe('TodayWeatherCard BWA', () => {
   const mockDataToday:DataToday = {
@@ -32,8 +32,8 @@ describe('TodayWeatherCard BWA', () => {
   };
   test('renders today weather card correctly', () => {
     const { getByTestId } = render(<TodayWeatherCard {...mockDataToday} />);
-    const windspeed = getByTestId('h1-WT');
-    expect(windspeed).toHaveTextContent('WEATHER FORECAST');
+    const h1test = getByTestId('h1-WT');
+    expect(h1test).toHaveTextContent('WEATHER FORECAST');
   });
   test('converts timestamp correctly', () => {
     const { getByTestId } = render(<TodayWeatherCard {...mockDataToday} />);
